@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://b25eomotjru0f"]
+[gd_scene load_steps=3 format=3 uid="uid://3n3k06gnbx2w"]
+
+[ext_resource type="Script" path="res://Dot_player.gd" id="1_f8tdb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lratv"]
 
 [node name="main" type="Node2D"]
+
+[node name="Dot_player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_f8tdb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dot_player"]
+shape = SubResource("CircleShape2D_lratv")
