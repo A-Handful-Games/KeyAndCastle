@@ -2,3 +2,5 @@
 
 [node name="DeezNuts" type="Node2D"]
 position = Vector2(-2, -1)
+
+[node name="MyChar" type="CharacterBody2D" parent="."]
