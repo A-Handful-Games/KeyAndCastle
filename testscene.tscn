@@ -4,3 +4,5 @@
 position = Vector2(-2, -1)
 
 [node name="JoeMama" type="CharacterBody2D" parent="."]
+
+[node name="DeathClock" type="Timer" parent="."]
