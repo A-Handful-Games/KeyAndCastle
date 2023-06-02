@@ -25,7 +25,6 @@ sources/2 = SubResource("TileSetAtlasSource_bm4ge")
 tile_set = SubResource("TileSet_pjnvs")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 2, 0, -1, 2, 0, -65536, 2, 0, 65535, 2, 0, -65538, 2, 0, -65537, 2, 0, -131072, 2, 0, -131071, 2, 0, -65535, 2, 0, 1, 2, 0, 65537, 2, 0, 65536, 2, 0, 131071, 2, 0, 131070, 2, 0, 65534, 2, 0, -2, 2, 0)
-
 [node name="Dot_player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_f8tdb")
 
