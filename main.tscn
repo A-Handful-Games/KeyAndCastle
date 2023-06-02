@@ -32,4 +32,4 @@ script = ExtResource("1_f8tdb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dot_player"]
 shape = SubResource("CircleShape2D_lratv")
 
-[node name="test" type="Node2D" parent="."]
+[node name="DeezNuts" type="Node2D" parent="."]
