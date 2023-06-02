@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b25eomotjru0f"]
+[gd_scene load_steps=6 format=3 uid="uid://b25eomotjru0f"]
 
 [ext_resource type="Script" path="res://Dot_player.gd" id="1_f8tdb"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_lratv"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xqf21"]
 resource_name = "temp_tile"
@@ -19,6 +17,8 @@ texture = SubResource("PlaceholderTexture2D_xqf21")
 [sub_resource type="TileSet" id="TileSet_pjnvs"]
 sources/2 = SubResource("TileSetAtlasSource_bm4ge")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lratv"]
+
 [node name="main" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -26,9 +26,10 @@ tile_set = SubResource("TileSet_pjnvs")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 2, 0, -1, 2, 0, -65536, 2, 0, 65535, 2, 0, -65538, 2, 0, -65537, 2, 0, -131072, 2, 0, -131071, 2, 0, -65535, 2, 0, 1, 2, 0, 65537, 2, 0, 65536, 2, 0, 131071, 2, 0, 131070, 2, 0, 65534, 2, 0, -2, 2, 0)
 
-
 [node name="Dot_player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_f8tdb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dot_player"]
 shape = SubResource("CircleShape2D_lratv")
+
+[node name="Timer" type="Timer" parent="."]
