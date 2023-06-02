@@ -33,3 +33,4 @@ script = ExtResource("1_f8tdb")
 shape = SubResource("CircleShape2D_lratv")
 
 [node name="DeezNuts" type="Node2D" parent="."]
+[node name="Timer" type="Timer" parent="."]
