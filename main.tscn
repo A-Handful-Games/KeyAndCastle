@@ -35,6 +35,11 @@ size = Vector2(10, 10)
 radius = 3.0
 height = 12.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lratv"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tlbgb"]
+size = Vector2(10, 10)
+
 [node name="main" type="Node2D"]
 
 [node name="Our_tile_grid" type="TileMap" parent="."]
