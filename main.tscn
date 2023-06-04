@@ -1,23 +1,18 @@
 [gd_scene load_steps=7 format=3 uid="uid://b25eomotjru0f"]
 
+[ext_resource type="Texture2D" uid="uid://bi0k6s0cpbf25" path="res://Tiles/pixilart-drawing.png" id="1_2tbqx"]
 [ext_resource type="Script" path="res://Dot_player.gd" id="1_f8tdb"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xqf21"]
-resource_name = "temp_tile"
-size = Vector2(64, 64)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bm4ge"]
-resource_name = "temp_tile"
-texture = SubResource("PlaceholderTexture2D_xqf21")
-0:3/0 = 0
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50tg4"]
+texture = ExtResource("1_2tbqx")
+texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
-3:3/0 = 0
-3:0/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_pjnvs"]
-sources/2 = SubResource("TileSetAtlasSource_bm4ge")
+[sub_resource type="TileSet" id="TileSet_h7jkt"]
+sources/0 = SubResource("TileSetAtlasSource_50tg4")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lratv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8d45"]
+size = Vector2(10, 10)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tlbgb"]
 size = Vector2(10, 10)
@@ -25,15 +20,15 @@ size = Vector2(10, 10)
 [node name="main" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_pjnvs")
+tile_set = SubResource("TileSet_h7jkt")
 format = 2
-layer_0/tile_data = PackedInt32Array(0, 2, 0, -1, 2, 0, -65536, 2, 0, 65535, 2, 0, -65538, 2, 0, -65537, 2, 0, -131072, 2, 0, -131071, 2, 0, -65535, 2, 0, 1, 2, 0, 65537, 2, 0, 65536, 2, 0, 131071, 2, 0, 131070, 2, 0, 65534, 2, 0, -2, 2, 0)
+layer_0/tile_data = PackedInt32Array(-1, 0, 0, -65536, 0, 0, 0, 0, 0, 65535, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, 5, 0, 0, 4, 0, 0, 3, 0, 0, 2, 0, 0, 1, 0, 0, -131067, 0, 0, -131068, 0, 0, -131069, 0, 0, -131070, 0, 0, -131071, 0, 0, -131072, 0, 0, -65537, 0, 0, -65538, 0, 0, -65539, 0, 0, -65540, 0, 0, -65541, 0, 0, -5, 0, 0, 65531, 0, 0, 131067, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, -4, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, -2, 0, 0, -3, 0, 0, -131078, 0, 0, -65542, 0, 0, -6, 0, 0, 65530, 0, 0, 131066, 0, 0, 196602, 0, 0, 196603, 0, 0, 196604, 0, 0, 196605, 0, 0, 196606, 0, 0, 196607, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 65542, 0, 0, 6, 0, 0, -65530, 0, 0, -131066, 0, 0, -196602, 0, 0, -196603, 0, 0, -196604, 0, 0, -196605, 0, 0, -196606, 0, 0, -196607, 0, 0, -196608, 0, 0, -131073, 0, 0, -131074, 0, 0, -131075, 0, 0, -131076, 0, 0, -131077, 0, 0, -196614, 0, 0, -196613, 0, 0, -196612, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, 196614, 0, 0, 196613, 0, 0, 196612, 0, 0, 196611, 0, 0, 196610, 0, 0, 196609, 0, 0, 262140, 0, 0, 262139, 0, 0, 262138, 0, 0, 262141, 0, 0, 262142, 0, 0, 262143, 0, 0, 196608, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 327679, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, -327674, 0, 0, -327675, 0, 0, -327676, 0, 0, -327677, 0, 0, -327678, 0, 0, -327679, 0, 0, -327680, 0, 0, -262145, 0, 0, -262146, 0, 0, -262147, 0, 0, -262148, 0, 0, -262149, 0, 0, -262150, 0, 0, -262151, 0, 0, -196615, 0, 0, -131079, 0, 0, -65543, 0, 0, -7, 0, 0, 65529, 0, 0, 131065, 0, 0, 196601, 0, 0, 262137, 0, 0, 327673, 0, 0, 393209, 0, 0, 393210, 0, 0, 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, -393210, 0, 0, -393211, 0, 0, -393212, 0, 0, -393213, 0, 0, -393214, 0, 0, -393215, 0, 0, -393216, 0, 0, -327681, 0, 0, -327682, 0, 0, -327683, 0, 0, -327684, 0, 0, -327685, 0, 0, -327686, 0, 0, -327687, 0, 0)
 
 [node name="Dot_player" type="CharacterBody2D" parent="."]
 script = ExtResource("1_f8tdb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dot_player"]
-shape = SubResource("CircleShape2D_lratv")
+shape = SubResource("RectangleShape2D_q8d45")
 
 [node name="Sprite2D" type="Sprite2D" parent="Dot_player"]
 texture = SubResource("PlaceholderTexture2D_tlbgb")
