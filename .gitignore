@@ -1,2 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
+
+# Ignore anything in folders called ".ignore"
+**/.ignore/**
+# Don't ignore the .ignore folders themselves
+!**/.ignore
