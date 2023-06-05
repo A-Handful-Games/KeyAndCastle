@@ -7,15 +7,21 @@ extends CharacterBody2D
 	
 func _physics_process(delta):
 	
-	#var test = Input.get_vector("left","right","up","down")
 	var input_direction = Vector2(0,0)
-	if Input.is_action_just_pressed("up"):
+	
+	#only run the other if statements if something is pressed
+	if Input.is_anything_pressed() == false:
+		pass
+	
+	# -1 is up and +1 is down (opposite of what you think)
+	# -1 is left and +1 is right
+	elif Input.is_action_just_pressed("up"):
 		input_direction = Vector2(0,-1)
-	if Input.is_action_just_pressed("down"):
+	elif Input.is_action_just_pressed("down"):
 		input_direction = Vector2(0,1)
-	if Input.is_action_just_pressed("right"):
+	elif Input.is_action_just_pressed("right"):
 		input_direction = Vector2(1,0)
-	if Input.is_action_just_pressed("left"):
+	elif Input.is_action_just_pressed("left"):
 		input_direction = Vector2(-1,0)
 
 	velocity = input_direction * move_speed
