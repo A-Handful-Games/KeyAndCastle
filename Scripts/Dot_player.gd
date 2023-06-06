@@ -7,18 +7,16 @@ var this_tile_size = Vector2()
 
 func _input(event):
 	if event is InputEventKey:
-		
+
 		var input_direction = Vector2(0,0)
-		
-		var x = char(event.unicode)
-		match x:
-			"w":
+		if event.pressed:
+			if InputMap.event_is_action(event, "up"):
 				input_direction = Vector2(0,-1)
-			"a":
+			elif InputMap.event_is_action(event, "left"):
 				input_direction = Vector2(-1,0)
-			"s":
+			elif InputMap.event_is_action(event, "down"):
 				input_direction = Vector2(0,1)
-			"d":
+			elif InputMap.event_is_action(event, "right"):
 				input_direction = Vector2(1,0)
 				
 		velocity = input_direction * move_speed
