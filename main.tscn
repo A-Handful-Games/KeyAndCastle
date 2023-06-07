@@ -51,7 +51,6 @@ our_tile_size = Vector2i(18, 39)
 our_grid_size = Vector2i(11, 9)
 
 [node name="Dot_player" type="CharacterBody2D" parent="."]
-position = Vector2(8, 8)
 script = ExtResource("2_bkvj6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dot_player"]
@@ -70,11 +69,9 @@ position = Vector2(32, 32)
 script = ExtResource("4_l7vsd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key"]
-position = Vector2(8, 8)
 shape = SubResource("CapsuleShape2D_2prtv")
 
 [node name="Sprite2D" type="Sprite2D" parent="key"]
-position = Vector2(8, 8)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_r6n2o")
 

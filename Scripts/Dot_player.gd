@@ -8,8 +8,9 @@ var grid_position = Vector2()
 var starting_pos = Vector2()
 
 
-
 func _input(event):
+	
+	
 	
 	if event is InputEventKey:
 
@@ -25,11 +26,19 @@ func _input(event):
 				input_direction = Vector2(1,0)
 				
 		velocity = input_direction * move_speed
-		position = position + velocity
+		var temp_position = position + velocity
+
+		
+		#grid size * tile size to get grid limits subtract tile size to put player at center of tile
+		var border = this_grid_size/2*this_tile_size - this_tile_size/2
+		
+		#limits player movement to the grid
+		#for some reason you have to clamp x and y seperately otherwise it just limits x axis
+		position.x = clamp(temp_position.x,-border.x,border.x)
+		position.y = clamp(temp_position.y,-border.y,border.y)
 				
 		if input_direction != Vector2(0,0):
-			print(input_direction)
-			print(position)
+			print(input_direction,position)
 
 func _ready():
 	grid_position = Vector2(0,0)
