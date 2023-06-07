@@ -2,12 +2,17 @@ extends CharacterBody2D
 
 @export var move_speed  = Vector2(16,16)
 
+var this_grid_size = Vector2()
+var this_tile_size = Vector2()
+
+
 func _ready():
 	pass
 
 
-
 func _input(event):
+	
+	
 	
 	if event is InputEventKey:
 
@@ -23,20 +28,26 @@ func _input(event):
 				input_direction = Vector2(1,0)
 				
 		velocity = input_direction * move_speed
-		position = position + velocity
+		var temp_position = position + velocity
+
+		
+		#grid size * tile size to get grid limits subtract tile size to put player at center of tile
+		var border = this_grid_size/2*this_tile_size - this_tile_size/2
+		
+		#limits player movement to the grid
+		#for some reason you have to clamp x and y seperately otherwise it just limits x axis
+		position.x = clamp(temp_position.x,-border.x,border.x)
+		position.y = clamp(temp_position.y,-border.y,border.y)
 				
 		if input_direction != Vector2(0,0):
-			print(input_direction)
-			print(position)
+			print(input_direction,position)
 
 
-func _on_our_tile_grid_proportions(tile_scale):
+func _on_our_tile_grid_proportions(tile_scale, grid_size, tile_size):
+	position = tile_size/2
+	apply_scale(tile_scale)
+	move_speed = Vector2(tile_size)
 	
-	#divide tile size by 2 to be put in center of tile
-	print(self.position)
+	this_grid_size = Vector2(grid_size)
+	this_tile_size = Vector2(tile_size)
 
-	self.position = Vector2(self.position[0]*tile_scale[0],self.position[1]*tile_scale[1])
-	self.apply_scale(tile_scale)
-	self.move_speed = move_speed * tile_scale
-
-	pass # Replace with function body.

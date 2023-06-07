@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b25eomotjru0f"]
+[gd_scene load_steps=12 format=3 uid="uid://b25eomotjru0f"]
 
 [ext_resource type="Texture2D" uid="uid://bi0k6s0cpbf25" path="res://Sprites/Tiles/pixilart-drawing.png" id="1_7oku0"]
 [ext_resource type="Script" path="res://Scripts/TileMap.gd" id="2_8ceu3"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b4s3kexrjkhu" path="res://Sprites/Objects/Key-Free-PNG-Image.png" id="3_r6n2o"]
 [ext_resource type="Texture2D" uid="uid://ehbsclwr3vt2" path="res://Sprites/Player/green-among-us-png-character-0.png" id="3_wrb2j"]
 [ext_resource type="Script" path="res://Scripts/key.gd" id="4_l7vsd"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="5_caxra"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50tg4"]
 texture = ExtResource("1_7oku0")
@@ -41,10 +42,9 @@ z_index = -5
 tile_set = SubResource("TileSet_h7jkt")
 format = 2
 script = ExtResource("2_8ceu3")
-our_tile_size = Vector2i(39, 39)
+our_tile_size = Vector2i(30, 39)
 
 [node name="Dot_player" type="CharacterBody2D" parent="."]
-position = Vector2(8, 8)
 script = ExtResource("2_bkvj6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dot_player"]
@@ -55,7 +55,7 @@ scale = Vector2(0.006, 0.006)
 texture = ExtResource("3_wrb2j")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.5, 2.5)
+script = ExtResource("5_caxra")
 
 [node name="key" type="StaticBody2D" parent="."]
 z_index = -1
@@ -63,11 +63,9 @@ position = Vector2(32, 32)
 script = ExtResource("4_l7vsd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="key"]
-position = Vector2(8, 8)
 shape = SubResource("CapsuleShape2D_2prtv")
 
 [node name="Sprite2D" type="Sprite2D" parent="key"]
-position = Vector2(8, 8)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_r6n2o")
 
