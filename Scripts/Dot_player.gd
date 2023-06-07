@@ -2,8 +2,13 @@ extends CharacterBody2D
 
 @export var move_speed : float = 16
 
+func _ready():
+	scale()
+
+
 
 func _input(event):
+	
 	if event is InputEventKey:
 
 		var input_direction = Vector2(0,0)
@@ -24,3 +29,6 @@ func _input(event):
 			print(input_direction)
 			print(position)
 
+func scale():
+	#TODO: make player-size, player-movement, and in-tile-starting-position scale with tile grid
+	pass
