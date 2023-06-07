@@ -5,7 +5,10 @@ extends CharacterBody2D
 var this_grid_size = Vector2()
 var this_tile_size = Vector2()
 
+
+
 func _input(event):
+	
 	if event is InputEventKey:
 
 		var input_direction = Vector2(0,0)
