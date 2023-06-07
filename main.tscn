@@ -47,17 +47,24 @@ z_index = -5
 tile_set = SubResource("TileSet_h7jkt")
 format = 2
 script = ExtResource("2_8ceu3")
+<<<<<<< refs/remotes/origin/feature/dot_movement
 our_tile_size = Vector2i(18, 39)
 our_grid_size = Vector2i(11, 9)
+=======
+our_tile_size = Vector2i(7, 9)
+our_grid_size = Vector2i(3, 12)
+>>>>>>> Grid now scales
 
 [node name="Dot_player" type="CharacterBody2D" parent="."]
 position = Vector2(8, 8)
 script = ExtResource("2_bkvj6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dot_player"]
+position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_q8d45")
 
 [node name="Sprite2D" type="Sprite2D" parent="Dot_player"]
+position = Vector2(1, 1)
 scale = Vector2(0.006, 0.006)
 texture = ExtResource("3_wrb2j")
 
