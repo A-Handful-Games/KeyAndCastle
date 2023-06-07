@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-@export var move_speed : float = 16
+@export var move_speed  = Vector2(16,16)
 
 func _ready():
-	scale()
+	pass
 
 
 
@@ -29,6 +29,14 @@ func _input(event):
 			print(input_direction)
 			print(position)
 
-func scale():
-	#TODO: make player-size, player-movement, and in-tile-starting-position scale with tile grid
-	pass
+
+func _on_our_tile_grid_proportions(tile_scale):
+	
+	#divide tile size by 2 to be put in center of tile
+	print(self.position)
+
+	self.position = Vector2(self.position[0]*tile_scale[0],self.position[1]*tile_scale[1])
+	self.apply_scale(tile_scale)
+	self.move_speed = move_speed * tile_scale
+
+	pass # Replace with function body.

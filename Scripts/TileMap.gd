@@ -1,6 +1,6 @@
 extends TileMap
 
-
+signal proportions(tile_scale)
 #this is the size of each tile
 @export var our_tile_size = Vector2i(16,16)
 
@@ -10,6 +10,7 @@ extends TileMap
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	create_grid()
+	
 
 
 #creates grid that that scalse with tile size and grid size
@@ -17,17 +18,15 @@ func create_grid():
 	var grid = self
 	var base_tile_size = Vector2i(16,16)
 	var base_grid_size = Vector2i(12,12)
-
-	#grid.tile_set.tile_size = our_tile_size
 	
 	
 	grid.our_grid_size = our_grid_size
 	
 	#needs to be float and vector2(not 2i) otherwise will round
 	grid.scale = Vector2(float(our_tile_size[0])/float(base_tile_size[0]),float(our_tile_size[1])/float(base_tile_size[1]))
-	print(our_tile_size)
-	print(grid.our_grid_size)
-	print(grid.scale)
+	print(our_tile_size," Size")
+	#print(grid.our_grid_size)
+	print(grid.scale, " Scale")
 
 	
 	var our_grid_size_x = our_grid_size[0]
@@ -41,6 +40,8 @@ func create_grid():
 			
 	#clears a cell at 0,0 to help keep track
 	set_cell(0, Vector2i(0,0), -1, Vector2i(0,0), 0)
+	
+	proportions.emit(grid.scale)
 	
 func _process(delta):
 	pass

@@ -41,19 +41,16 @@ z_index = -5
 tile_set = SubResource("TileSet_h7jkt")
 format = 2
 script = ExtResource("2_8ceu3")
-our_tile_size = Vector2i(7, 9)
-our_grid_size = Vector2i(3, 12)
+our_tile_size = Vector2i(39, 39)
 
 [node name="Dot_player" type="CharacterBody2D" parent="."]
 position = Vector2(8, 8)
 script = ExtResource("2_bkvj6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dot_player"]
-position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_q8d45")
 
 [node name="Sprite2D" type="Sprite2D" parent="Dot_player"]
-position = Vector2(1, 1)
 scale = Vector2(0.006, 0.006)
 texture = ExtResource("3_wrb2j")
 
@@ -73,3 +70,5 @@ shape = SubResource("CapsuleShape2D_2prtv")
 position = Vector2(8, 8)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("3_r6n2o")
+
+[connection signal="proportions" from="Our_tile_grid" to="Dot_player" method="_on_our_tile_grid_proportions"]
