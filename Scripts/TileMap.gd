@@ -33,7 +33,7 @@ func create_grid():
 	for x in range(our_grid_size_x):
 		for y in range(our_grid_size_y):
 			#print("x: " + str(x)," y: " + str(y))
-			set_cell(0, Vector2i(x-our_grid_size_x/2,y-our_grid_size_y/2), 0, Vector2i(0,0), 0)
+			set_cell(0, Vector2i(x,y), 0, Vector2i(0,0), 0)
 			
 	#clears a cell at 0,0 to help keep track
 	set_cell(0, Vector2i(0,0), -1, Vector2i(0,0), 0)

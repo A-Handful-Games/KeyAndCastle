@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://b25eomotjru0f"]
 
-[ext_resource type="Texture2D" uid="uid://bi0k6s0cpbf25" path="res://Sprites/Tiles/pixilart-drawing.png" id="1_7oku0"]
+[ext_resource type="Texture2D" uid="uid://dm7xn7vq3wj0o" path="res://Sprites/Tiles/pixilart-drawing.png" id="1_7oku0"]
 [ext_resource type="Script" path="res://Scripts/TileMap.gd" id="2_8ceu3"]
 [ext_resource type="Script" path="res://Scripts/Dot_player.gd" id="2_bkvj6"]
 [ext_resource type="Texture2D" uid="uid://b4s3kexrjkhu" path="res://Sprites/Objects/Key-Free-PNG-Image.png" id="3_r6n2o"]
@@ -35,11 +35,6 @@ size = Vector2(10, 10)
 radius = 3.0
 height = 12.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lratv"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_tlbgb"]
-size = Vector2(10, 10)
-
 [node name="main" type="Node2D"]
 
 [node name="Our_tile_grid" type="TileMap" parent="."]
@@ -47,7 +42,8 @@ z_index = -5
 tile_set = SubResource("TileSet_h7jkt")
 format = 2
 script = ExtResource("2_8ceu3")
-our_tile_size = Vector2i(30, 39)
+our_tile_size = Vector2i(18, 39)
+our_grid_size = Vector2i(11, 9)
 
 [node name="Dot_player" type="CharacterBody2D" parent="."]
 script = ExtResource("2_bkvj6")
