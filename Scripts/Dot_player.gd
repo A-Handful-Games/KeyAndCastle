@@ -31,13 +31,14 @@ func _input(event):
 		var temp_position = position + velocity
 
 		
-		#grid size * tile size to get grid limits subtract tile size to put player at center of tile
-		var border = this_grid_size/2*this_tile_size - this_tile_size/2
-		
-		#limits player movement to the grid
-		#for some reason you have to clamp x and y seperately otherwise it just limits x axis
-		position.x = clamp(temp_position.x,-border.x,border.x)
-		position.y = clamp(temp_position.y,-border.y,border.y)
+		# limits player movement to the grid ### FIXME: Should be a system.
+		# Grid-only stuff doesn't need floats. (Vector2 => Vector2i)
+		var grid_area: Vector2i = this_grid_size/2*this_tile_size 
+		# Involves player position, need Vector2
+		var cell_offset: Vector2 = this_tile_size/2
+
+		var bounds: Vector2 = grid_area - cell_offset)
+		position = Vector2.clamp(-1*bounds, bounds)
 				
 		if input_direction != Vector2(0,0):
 			print(input_direction,position)
