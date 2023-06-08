@@ -43,7 +43,6 @@ func _input(event):
 func _input(event):
 	
 	
-	
 	if event is InputEventKey:
 
 		var input_direction = Vector2(0,0)
@@ -56,22 +55,18 @@ func _input(event):
 				input_direction = Vector2(0,1)
 			elif InputMap.event_is_action(event, "right"):
 				input_direction = Vector2(1,0)
-				
-		velocity = input_direction * move_speed
-		var temp_position = position + velocity
-
 		
-		# limits player movement to the grid ### FIXME: Should be a system.
-		# Grid-only stuff doesn't need floats. (Vector2 => Vector2i)
-		var grid_area: Vector2i = this_grid_size/2*this_tile_size 
-		# Involves player position, need Vector2
-		var cell_offset: Vector2 = this_tile_size/2
+		
+		grid_position = grid_position + input_direction
+		print(grid_position)
+		
+		grid_position = grid_position.clamp(Vector2.ZERO,this_grid_size - Vector2.ONE)
+		
+		print(grid_position,this_grid_size,starting_pos)
+		
+		position = grid_position * this_tile_size + this_tile_size/2 
+		
 
-		var bounds: Vector2 = grid_area - cell_offset)
-		position = Vector2.clamp(-1*bounds, bounds)
-				
-		if input_direction != Vector2(0,0):
-			print(input_direction,position)
 
 func _ready():
 	grid_position = Vector2(0,0)
