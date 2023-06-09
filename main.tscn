@@ -42,8 +42,8 @@ z_index = -5
 tile_set = SubResource("TileSet_h7jkt")
 format = 2
 script = ExtResource("2_8ceu3")
-our_tile_size = Vector2i(18, 39)
-our_grid_size = Vector2i(11, 9)
+our_tile_size = Vector2i(50, 60)
+our_grid_size = Vector2i(5, 20)
 
 [node name="Dot_player" type="CharacterBody2D" parent="."]
 script = ExtResource("2_bkvj6")
@@ -71,3 +71,4 @@ scale = Vector2(0.05, 0.05)
 texture = ExtResource("7_w2m40")
 
 [connection signal="proportions" from="Our_tile_grid" to="Dot_player" method="_on_our_tile_grid_proportions"]
+[connection signal="proportions" from="Our_tile_grid" to="Camera2D" method="_on_our_tile_grid_proportions"]
