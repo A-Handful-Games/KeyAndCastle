@@ -12,6 +12,10 @@ var this_tile_center_offset : Vector2
 var player_data : Dictionary
 var id : RID
 
+<<<<<<< refs/remotes/origin/develop
+=======
+
+>>>>>>> Bugged camera
 func _ready():
 	this_grid_position = Vector2(0,0)
 	id = get_rid()
