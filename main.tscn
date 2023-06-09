@@ -1,15 +1,15 @@
 [gd_scene load_steps=12 format=3 uid="uid://b25eomotjru0f"]
 
-[ext_resource type="Texture2D" uid="uid://dm7xn7vq3wj0o" path="res://Sprites/Tiles/pixilart-drawing.png" id="1_7oku0"]
+[ext_resource type="Texture2D" uid="uid://dm7xn7vq3wj0o" path="res://Assets/Sprites/Tiles/pixilart-drawing.png" id="1_wr0dg"]
 [ext_resource type="Script" path="res://Scripts/TileMap.gd" id="2_8ceu3"]
 [ext_resource type="Script" path="res://Scripts/Dot_player.gd" id="2_bkvj6"]
-[ext_resource type="Texture2D" uid="uid://b4s3kexrjkhu" path="res://Sprites/Objects/Key-Free-PNG-Image.png" id="3_r6n2o"]
-[ext_resource type="Texture2D" uid="uid://ehbsclwr3vt2" path="res://Sprites/Player/green-among-us-png-character-0.png" id="3_wrb2j"]
+[ext_resource type="Texture2D" uid="uid://ehbsclwr3vt2" path="res://Assets/Sprites/Player/green-among-us-png-character-0.png" id="4_4cknf"]
 [ext_resource type="Script" path="res://Scripts/key.gd" id="4_l7vsd"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="5_caxra"]
+[ext_resource type="Texture2D" uid="uid://b4s3kexrjkhu" path="res://Assets/Sprites/Objects/Key-Free-PNG-Image.png" id="7_w2m40"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50tg4"]
-texture = ExtResource("1_7oku0")
+texture = ExtResource("1_wr0dg")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -53,7 +53,7 @@ shape = SubResource("RectangleShape2D_q8d45")
 
 [node name="Sprite2D" type="Sprite2D" parent="Dot_player"]
 scale = Vector2(0.006, 0.006)
-texture = ExtResource("3_wrb2j")
+texture = ExtResource("4_4cknf")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("5_caxra")
@@ -68,6 +68,6 @@ shape = SubResource("CapsuleShape2D_2prtv")
 
 [node name="Sprite2D" type="Sprite2D" parent="key"]
 scale = Vector2(0.05, 0.05)
-texture = ExtResource("3_r6n2o")
+texture = ExtResource("7_w2m40")
 
 [connection signal="proportions" from="Our_tile_grid" to="Dot_player" method="_on_our_tile_grid_proportions"]
