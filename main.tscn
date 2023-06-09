@@ -42,8 +42,8 @@ z_index = -5
 tile_set = SubResource("TileSet_h7jkt")
 format = 2
 script = ExtResource("2_8ceu3")
-our_tile_size = Vector2i(50, 60)
-our_grid_size = Vector2i(20, 5)
+our_tile_size = Vector2i(10, 5)
+our_grid_size = Vector2i(5, 50)
 
 [node name="Dot_player" type="CharacterBody2D" parent="."]
 script = ExtResource("2_bkvj6")
