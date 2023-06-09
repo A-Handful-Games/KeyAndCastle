@@ -7,6 +7,10 @@ var this_tile_size = Vector2()
 var grid_position = Vector2()
 var starting_pos = Vector2()
 
+<<<<<<< refs/remotes/origin/develop
+=======
+
+>>>>>>> Bugged camera
 func _ready():
 	grid_position = Vector2(0,0)
 	pass
