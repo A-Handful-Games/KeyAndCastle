@@ -31,6 +31,15 @@ func _on_our_tile_grid_proportions(tile_scale, grid_size, tile_size):
 		zoom = ratio
 	else:
 		
-		print((Grid_center*2).normalized())
-		zoom = Vector2.ONE/(Grid_center*2).normalized()
+		#take diffenence between grid size and screen size
+		var diff = Screen_size-(Grid_center*2)
+		
+		#get the smallest absoulte difference
+		var min_diff = abs(diff).min_axis_index()
+		
+		#size of the camera/what size the camera should be
+		var scale_by = ((Grid_center*2)[min_diff]+diff[min_diff])/(Grid_center*2)[min_diff]
+		
+		zoom = Vector2(scale_by,scale_by)
+		pass
 
