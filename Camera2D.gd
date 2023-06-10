@@ -4,7 +4,7 @@ extends Camera2D
 @export var Take_up_full_screen : bool = false
 
 
-@export var Take_up_full_screen : bool = false
+
 
 
 
