@@ -72,3 +72,4 @@ texture = ExtResource("7_w2m40")
 
 [connection signal="proportions" from="Our_tile_grid" to="Dot_player" method="_on_our_tile_grid_proportions"]
 [connection signal="proportions" from="Our_tile_grid" to="Camera2D" method="_on_our_tile_grid_proportions"]
+[connection signal="proportions" from="Our_tile_grid" to="key" method="_on_our_tile_grid_proportions"]
