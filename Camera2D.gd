@@ -1,8 +1,5 @@
 extends Camera2D
-var grid_size : Vector2
-var grid_center : Vector2
-var screen_size : Vector2
-var ratio : Vector2
+
 
 @export var Take_up_full_screen : bool = false
 
