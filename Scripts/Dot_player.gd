@@ -30,7 +30,6 @@ func _input(event):
 		
 		
 		grid_position = grid_position + input_direction
-		print(grid_position)
 		
 		grid_position = grid_position.clamp(Vector2.ZERO,this_grid_size - Vector2.ONE)
 		
