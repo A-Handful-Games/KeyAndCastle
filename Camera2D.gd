@@ -17,20 +17,18 @@ func _process(delta):
 	pass
 
 
-func _on_our_tile_grid_proportions(tile_scale, grid_size_in_tiles, tile_size):
+func _on_our_tile_grid_proportions(grid_shape,tile_size,grid_size_in_tiles,grid_size_in_units,scale_of_grid,tile_center_offset,center_of_grid):
 	
-	var grid_size = Vector2(grid_size_in_tiles*tile_size)
-	var grid_center = grid_size/2
 	var screen_size = get_viewport_rect().size
-	var ratio = screen_size/grid_size
+	var ratio = screen_size/grid_size_in_units
 
 	
 	#Centers camera at grid center
-	position = grid_center
+	position = center_of_grid
 	
 	zoom = calc_camera_zoom(
-		grid_size,
-		grid_center,
+		grid_size_in_units,
+		center_of_grid,
 		screen_size,
 		ratio
 	)

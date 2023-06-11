@@ -44,6 +44,7 @@ format = 2
 script = ExtResource("2_8ceu3")
 our_tile_size = Vector2i(36, 26)
 our_grid_size = Vector2i(36, 11)
+grid_shape = 0
 
 [node name="Dot_player" type="CharacterBody2D" parent="."]
 script = ExtResource("2_bkvj6")

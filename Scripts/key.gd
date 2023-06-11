@@ -17,12 +17,12 @@ func _physics_process(delta):
 	pass
 
 
-func _on_our_tile_grid_proportions(tile_scale, grid_size_in_tiles, tile_size):
+func _on_our_tile_grid_proportions(grid_shape,tile_size,grid_size_in_tiles,grid_size_in_units,scale_of_grid,tile_center_offset,center_of_grid):
 	
 	#first choses random x,y in tiles then converts that to position
 	var offset = tile_size/2
 	var rand_pos_x = key_rng.randi_range(0,grid_size_in_tiles[0]) 
 	var rand_pos_y =  key_rng.randi_range(0,grid_size_in_tiles[1]) 
-	scale = tile_scale
+	scale = scale_of_grid
 	position = Vector2(rand_pos_x,rand_pos_y)*Vector2(tile_size) + Vector2(offset)
 	pass # Replace with function body.
