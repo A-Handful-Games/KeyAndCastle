@@ -17,39 +17,39 @@ func _process(delta):
 	pass
 
 
-func _on_our_tile_grid_proportions(grid_shape,tile_size,grid_size_in_tiles,grid_size_in_units,scale_of_grid,tile_center_offset,center_of_grid):
-	
+func _on_our_tile_grid_proportions(grid_data):
 	var screen_size = get_viewport_rect().size
-	var ratio = screen_size/Vector2(grid_size_in_units)
+	var ratio = screen_size/grid_data.grid_size_in_units
 
 	
 	#Centers camera at grid center
-	position = center_of_grid
+	position = grid_data.center_of_grid
 	
 	zoom = calc_camera_zoom(
-		grid_size_in_units,
-		center_of_grid,
+		grid_data.grid_size_in_units,
+		grid_data.center_of_grid,
 		screen_size,
 		ratio
 	)
 
 
 func calc_camera_zoom(grid_size,grid_center,screen_size,ratio)->Vector2:
-
+	var index_diff : int
+	var diff : Vector2
+	var scale_by : int
 	
 	if Take_up_full_screen == true:
 		#if true makes grid take up full screen
 		return ratio
 		
-	
 	#make grid smaller
-	var index_diff : int = grid_size.max_axis_index()
+	index_diff = grid_size.max_axis_index()
 	
-	if Vector2(grid_size) < screen_size:
+	if grid_size < screen_size:
 		#make grid bigger
 		
 		#take diffenence between grid size and screen size
-		var diff = Vector2(screen_size-grid_size)
+		diff = screen_size-grid_size
 		
 		#if grid is samller than screen size get the axis in which the 
 		#difference between the grid and the sccreen is the smallest
@@ -57,8 +57,9 @@ func calc_camera_zoom(grid_size,grid_center,screen_size,ratio)->Vector2:
 			
 		
 	#size of the camera/what size the camera should be
-	var scale_by = ratio[index_diff]
-
+	scale_by = ratio[index_diff]
+	
+	
 	return Vector2(scale_by,scale_by)
 
 
