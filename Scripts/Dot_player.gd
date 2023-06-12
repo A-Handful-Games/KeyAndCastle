@@ -32,7 +32,7 @@ func _input(event):
 		
 		this_grid_position = this_grid_position + input_direction
 		
-		this_grid_position = this_grid_position.clamp(Vector2.ZERO,this_grid_size_in_tiles - Vector2.ONE)
+		this_grid_position = this_grid_position.clamp(Vector2.ZERO,this_grid_size_in_tiles)
 		
 		print_debug(this_grid_position)
 		
