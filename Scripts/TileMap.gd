@@ -71,6 +71,7 @@ func create_grid():
 		"selected_grid_shape":selected_grid_shape,
 		"tile_size":our_tile_size,
 		"grid_size_in_tiles":our_grid_size - Vector2.ONE,#subtect 1 because index starts at 0
+		"grid_size_in_tiles":our_grid_size - Vector2.ONE,#subtect 1 because index starts at 0
 		"grid_size_in_units":grid_size_in_units,
 		"scale_of_grid":scale, #key should be scale_of_grid and not just scale to prevent naming conflicts
 		"tile_center_offset":tile_center_offset,
@@ -115,7 +116,7 @@ func create_grid():
 		"tile_size":our_tile_size,
 		"grid_size_in_tiles":our_grid_size,
 		"grid_size_in_units":grid_size_in_units,
-		"scale_of_grid":scale,
+		"scale_of_grid":scale, #key should be scale_of_grid and not just scale to prevent naming conflicts
 		"tile_center_offset":tile_center_offset,
 		"center_of_grid":center_of_grid
 		}

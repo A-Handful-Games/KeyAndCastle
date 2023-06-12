@@ -52,7 +52,7 @@ func calc_camera_zoom(grid_size,grid_center,screen_size,ratio)->Vector2:
 	if grid_size < screen_size:
 		#make grid bigger
 		
-		#take diffenence between grid size and screen size
+		#iffenence between grid size and screen size relative to screen size
 		diff = (screen_size-grid_size)/screen_size
 		
 		#if grid is samller than screen size get the axis in which the 
