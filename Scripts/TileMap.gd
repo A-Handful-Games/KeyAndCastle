@@ -87,17 +87,17 @@ func create_grid():
 	
 	
 	
-	var grid_size_in_units = our_tile_size * our_grid_size
-	var tile_center_offset = our_tile_size/2
-	var center_of_grid = grid_size_in_units/2
+	grid_size_in_units = our_tile_size * our_grid_size
+	tile_center_offset = our_tile_size/2
+	center_of_grid = grid_size_in_units/2
 	
 	#needs to be float and vector2(not 2i) otherwise will round
-	scale = Vector2(our_tile_size)/Vector2(base_tile_size)
+	scale = our_tile_size/base_tile_size
 	
 	
 	
 	#This can probaly be done more simple but grid_shape returns index not string
-	var selected_grid_shape : String
+	
 	match grid_shape:
 		0:
 			create_square_grid()
@@ -109,6 +109,19 @@ func create_grid():
 	#emit the proportions signal with the scale of the grid
 	proportions.emit(selected_grid_shape,our_tile_size,our_grid_size,grid_size_in_units,scale,tile_center_offset,center_of_grid)
 >>>>>>> redid grid script (#10)
+	
+	grid_data = {
+		"selected_grid_shape":selected_grid_shape,
+		"tile_size":our_tile_size,
+		"grid_size_in_tiles":our_grid_size,
+		"grid_size_in_units":grid_size_in_units,
+		"scale_of_grid":scale,
+		"tile_center_offset":tile_center_offset,
+		"center_of_grid":center_of_grid
+		}
+		
+	#emit the proportions signal with data about the grids proportions
+	proportions.emit(grid_data)
 	
 func create_square_grid():
 	#places cells by column

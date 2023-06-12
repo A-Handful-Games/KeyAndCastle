@@ -22,11 +22,7 @@ func _process(delta):
 
 func _on_our_tile_grid_proportions(grid_data):
 	var screen_size = get_viewport_rect().size
-<<<<<<< refs/remotes/origin/feature/I_have_no_idea_how_features_work
 	var ratio = screen_size/grid_data.grid_size_in_units
-=======
-	var ratio = screen_size/Vector2(grid_size_in_units)
->>>>>>> Vector2i -> Vector2 fix
 
 	
 	#Centers camera at grid center
@@ -51,17 +47,12 @@ func calc_camera_zoom(grid_size,grid_center,screen_size,ratio)->Vector2:
 		return ratio
 		
 	#make grid smaller
-<<<<<<< refs/remotes/origin/feature/I_have_no_idea_how_features_work
 	index_diff = grid_size.max_axis_index()
-	if grid_size < screen_size:
-=======
-	var index_diff : int = grid_size.max_axis_index()
 	
-	if Vector2(grid_size) < screen_size:
->>>>>>> Vector2i -> Vector2 fix
+	if grid_size < screen_size:
 		#make grid bigger
 		
-		#iffenence between grid size and screen size relative to screen size
+		#take diffenence between grid size and screen size
 		diff = (screen_size-grid_size)/screen_size
 		
 		#if grid is samller than screen size get the axis in which the 
