@@ -1,8 +1,12 @@
 extends TileMap
 
+<<<<<<< refs/remotes/origin/feature/I_have_no_idea_how_features_work
 signal proportions(grid_data)
 
 
+=======
+signal proportions(grid_shape,tile_size,grid_size_in_tiles,grid_size_in_units,scale_of_grid,tile_center_offset,center_of_grid)
+>>>>>>> redid grid script (#10)
 #this is the size of each tile
 @export var our_tile_size = Vector2(16,16)
 
@@ -12,6 +16,10 @@ signal proportions(grid_data)
 #the shape of the grid
 #grid_shape will return selected index
 @export_enum("square","cricle") var grid_shape : int
+
+#the shape of the grid
+#grid_shape will return selected index
+@export_enum("square","cricle") var grid_shape
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,6 +32,7 @@ func _process(delta):
 	
 #creates grid that that scales with tile size and grid size
 func create_grid():
+<<<<<<< refs/remotes/origin/feature/I_have_no_idea_how_features_work
 	var grid_data : Dictionary
 	var selected_grid_shape : String
 	var base_tile_size : Vector2
@@ -70,13 +79,46 @@ func create_grid():
 		
 	#emit the proportions signal with data about the grids proportions
 	proportions.emit(grid_data)
+=======
+	
+	#default grid settings
+	var base_tile_size = Vector2i(16,16)
+	var base_grid_size = Vector2i(12,12)
+	
+	
+	
+	var grid_size_in_units = our_tile_size * our_grid_size
+	var tile_center_offset = our_tile_size/2
+	var center_of_grid = grid_size_in_units/2
+	
+	#needs to be float and vector2(not 2i) otherwise will round
+	scale = Vector2(our_tile_size)/Vector2(base_tile_size)
+	
+	
+	
+	#This can probaly be done more simple but grid_shape returns index not string
+	var selected_grid_shape : String
+	match grid_shape:
+		0:
+			create_square_grid()
+			selected_grid_shape = "square"
+		1:
+			create_circle_grid()
+			selected_grid_shape = "circle"
+	
+	#emit the proportions signal with the scale of the grid
+	proportions.emit(selected_grid_shape,our_tile_size,our_grid_size,grid_size_in_units,scale,tile_center_offset,center_of_grid)
+>>>>>>> redid grid script (#10)
 	
 func create_square_grid():
 	#places cells by column
 	for x in range(our_grid_size[0]):
 		for y in range(our_grid_size[1]):
 			#print("x: " + str(x)," y: " + str(y))
+<<<<<<< refs/remotes/origin/feature/I_have_no_idea_how_features_work
 			#placing cells should be Vector2i not Vector2
+=======
+>>>>>>> redid grid script (#10)
 			set_cell(0, Vector2i(x,y), 0, Vector2i(0,0), 0)
 	pass
 	

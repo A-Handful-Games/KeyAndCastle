@@ -43,8 +43,9 @@ z_index = -5
 tile_set = SubResource("TileSet_h7jkt")
 format = 2
 script = ExtResource("2_8ceu3")
-our_tile_size = Vector2(22, 5)
-our_grid_size = Vector2(14, 33)
+our_tile_size = Vector2i(36, 26)
+our_grid_size = Vector2i(36, 11)
+grid_shape = 0
 
 [node name="Dot_player" type="CharacterBody2D" parent="."]
 script = ExtResource("2_bkvj6")
@@ -79,6 +80,4 @@ script = ExtResource("8_si05o")
 
 [connection signal="proportions" from="Our_tile_grid" to="Dot_player" method="_on_our_tile_grid_proportions"]
 [connection signal="proportions" from="Our_tile_grid" to="Camera2D" method="_on_our_tile_grid_proportions"]
-[connection signal="proportions" from="Our_tile_grid" to="Key" method="_on_our_tile_grid_proportions"]
-[connection signal="player_moved" from="Dot_player" to="Key" method="_on_dot_player_player_moved"]
-[connection signal="key_got" from="Key" to="Tracker" method="_on_key_key_got"]
+[connection signal="proportions" from="Our_tile_grid" to="key" method="_on_our_tile_grid_proportions"]
