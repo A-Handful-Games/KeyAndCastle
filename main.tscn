@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://Tracker.gd" id="8_si05o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50tg4"]
-texture = ExtResource("1_wr0dg")
+texture = ExtResource("1_7oku0")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
