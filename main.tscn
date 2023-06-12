@@ -1,6 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://b25eomotjru0f"]
 
-[ext_resource type="Texture2D" uid="uid://dm7xn7vq3wj0o" path="res://Assets/Sprites/Tiles/pixilart-drawing.png" id="1_wr0dg"]
+[ext_resource type="Texture2D" uid="uid://dm7xn7vq3wj0o" path="res://Sprites/Tiles/pixilart-drawing.png" id="1_7oku0"]
+[ext_resource type="Script" path="res://main.gd" id="1_esq5c"]
 [ext_resource type="Script" path="res://Scripts/TileMap.gd" id="2_8ceu3"]
 [ext_resource type="Script" path="res://Scripts/Dot_player.gd" id="2_bkvj6"]
 [ext_resource type="Texture2D" uid="uid://ehbsclwr3vt2" path="res://Assets/Sprites/Player/green-among-us-png-character-0.png" id="4_4cknf"]
@@ -36,9 +37,8 @@ size = Vector2(10, 10)
 radius = 3.0
 height = 12.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lratv"]
-
 [node name="main" type="Node2D"]
+script = ExtResource("1_esq5c")
 
 [node name="Our_tile_grid" type="TileMap" parent="."]
 z_index = -5
@@ -48,6 +48,7 @@ script = ExtResource("2_8ceu3")
 
 [node name="Dot_player" type="CharacterBody2D" parent="."]
 script = ExtResource("2_bkvj6")
+move_speed = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dot_player"]
 shape = SubResource("RectangleShape2D_q8d45")
