@@ -48,7 +48,6 @@ func calc_camera_zoom(grid_size,grid_center,screen_size,ratio)->Vector2:
 		
 	#make grid smaller
 	index_diff = grid_size.max_axis_index()
-	
 	if grid_size < screen_size:
 		#make grid bigger
 		
