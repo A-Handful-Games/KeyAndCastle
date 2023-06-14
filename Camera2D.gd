@@ -31,12 +31,13 @@ func _on_our_tile_grid_proportions(grid_data):
 		screen_size,
 		ratio
 	)
+	print(zoom)
 
 
 func calc_camera_zoom(grid_size,grid_center,screen_size,ratio)->Vector2:
 	var index_diff : int
 	var diff : Vector2
-	var scale_by : int
+	var scale_by : float
 	
 	if Take_up_full_screen == true:
 		#if true makes grid take up full screen
@@ -44,7 +45,6 @@ func calc_camera_zoom(grid_size,grid_center,screen_size,ratio)->Vector2:
 		
 	#make grid smaller
 	index_diff = grid_size.max_axis_index()
-	
 	if grid_size < screen_size:
 		#make grid bigger
 		

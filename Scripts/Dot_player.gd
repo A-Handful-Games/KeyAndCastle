@@ -1,15 +1,20 @@
 extends CharacterBody2D
 
+signal player_moved(player_data)
+
 @export var move_speed  = Vector2(16,16)
 
-var this_grid_size_in_tiles = Vector2()
-var this_tile_size = Vector2()
-var this_grid_position = Vector2()
-var this_starting_pos = Vector2()
-var this_tile_center_offset = Vector2()
+var this_grid_size_in_tiles : Vector2
+var this_tile_size : Vector2
+var this_grid_position : Vector2
+var this_starting_pos : Vector2
+var this_tile_center_offset : Vector2
+var player_data : Dictionary
+var id : RID
 
 func _ready():
 	this_grid_position = Vector2(0,0)
+	id = get_rid()
 	pass
 
 
@@ -38,6 +43,12 @@ func _input(event):
 		
 		position = this_grid_position * this_tile_size + this_tile_size/2 
 		
+		player_data = {
+			"player_position_in_units":position,
+			"player_position_in_tiles":this_grid_position,
+			"player_id":id
+		}
+		player_moved.emit(player_data)
 
 
 

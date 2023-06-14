@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://b25eomotjru0f"]
+[gd_scene load_steps=13 format=3 uid="uid://b25eomotjru0f"]
 
 [ext_resource type="Texture2D" uid="uid://dm7xn7vq3wj0o" path="res://Assets/Sprites/Tiles/pixilart-drawing.png" id="1_wr0dg"]
 [ext_resource type="Script" path="res://Scripts/TileMap.gd" id="2_8ceu3"]
 [ext_resource type="Script" path="res://Scripts/Dot_player.gd" id="2_bkvj6"]
 [ext_resource type="Texture2D" uid="uid://ehbsclwr3vt2" path="res://Assets/Sprites/Player/green-among-us-png-character-0.png" id="4_4cknf"]
-[ext_resource type="Script" path="res://Scripts/key.gd" id="4_l7vsd"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="5_caxra"]
+[ext_resource type="Script" path="res://Key.gd" id="6_2qcvf"]
 [ext_resource type="Texture2D" uid="uid://b4s3kexrjkhu" path="res://Assets/Sprites/Objects/Key-Free-PNG-Image.png" id="7_w2m40"]
+[ext_resource type="Script" path="res://Tracker.gd" id="8_si05o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50tg4"]
 texture = ExtResource("1_wr0dg")
@@ -42,8 +43,8 @@ z_index = -5
 tile_set = SubResource("TileSet_h7jkt")
 format = 2
 script = ExtResource("2_8ceu3")
-our_tile_size = Vector2(4, 4)
-our_grid_size = Vector2(4, 2)
+our_tile_size = Vector2(22, 5)
+our_grid_size = Vector2(14, 33)
 
 [node name="Dot_player" type="CharacterBody2D" parent="."]
 script = ExtResource("2_bkvj6")
@@ -58,18 +59,26 @@ texture = ExtResource("4_4cknf")
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("5_caxra")
 
-[node name="key" type="StaticBody2D" parent="."]
-z_index = -1
+[node name="Key" type="Area2D" parent="."]
 position = Vector2(32, 32)
-script = ExtResource("4_l7vsd")
+script = ExtResource("6_2qcvf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="key"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key"]
 shape = SubResource("CapsuleShape2D_2prtv")
 
-[node name="Sprite2D" type="Sprite2D" parent="key"]
+[node name="Sprite2D" type="Sprite2D" parent="Key"]
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("7_w2m40")
 
+[node name="Tracker" type="TextEdit" parent="."]
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 128.0
+offset_bottom = 112.0
+script = ExtResource("8_si05o")
+
 [connection signal="proportions" from="Our_tile_grid" to="Dot_player" method="_on_our_tile_grid_proportions"]
 [connection signal="proportions" from="Our_tile_grid" to="Camera2D" method="_on_our_tile_grid_proportions"]
-[connection signal="proportions" from="Our_tile_grid" to="key" method="_on_our_tile_grid_proportions"]
+[connection signal="proportions" from="Our_tile_grid" to="Key" method="_on_our_tile_grid_proportions"]
+[connection signal="player_moved" from="Dot_player" to="Key" method="_on_dot_player_player_moved"]
+[connection signal="key_got" from="Key" to="Tracker" method="_on_key_key_got"]
