@@ -11,15 +11,12 @@ var this_grid_size_in_tiles : Vector2
 var this_tile_size : Vector2
 var this_grid_position : Vector2:
 	set(potential_position):
-		
 		this_grid_position = (
 			potential_position.clamp(
 				Vector2.ZERO,
 				this_grid_size_in_tiles
 			)
-			
 		)
-
 var this_starting_pos : Vector2
 var this_tile_center_offset : Vector2
 var player_data : Dictionary
@@ -48,7 +45,7 @@ func _input(event):
 				input_direction = Vector2(1,0)
 		
 		
-		this_grid_position = (this_grid_position + input_direction)
+		this_grid_position = this_grid_position + input_direction
 		
 		
 		position = this_grid_position * this_tile_size + this_tile_size/2 
