@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://b25eomotjru0f"]
 
-[ext_resource type="Texture2D" uid="uid://dm7xn7vq3wj0o" path="res://Sprites/Tiles/pixilart-drawing.png" id="1_7oku0"]
+[ext_resource type="Texture2D" uid="uid://dm7xn7vq3wj0o" path="res://Assets/Sprites/Tiles/pixilart-drawing.png" id="1_7oku0"]
 [ext_resource type="Script" path="res://main.gd" id="1_esq5c"]
 [ext_resource type="Script" path="res://Scripts/TileMap.gd" id="2_8ceu3"]
 [ext_resource type="Script" path="res://Scripts/Dot_player.gd" id="2_bkvj6"]
