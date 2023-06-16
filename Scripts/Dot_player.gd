@@ -4,6 +4,7 @@ signal player_moved(player_data)
 
 @export var move_speed  = Vector2(16,16)
 
+
 var this_grid_size_in_tiles : Vector2
 var this_tile_size : Vector2
 var this_grid_position : Vector2
@@ -15,6 +16,7 @@ var id : RID
 func _ready():
 	this_grid_position = Vector2(0,0)
 	id = get_rid()
+
 	pass
 
 
@@ -37,7 +39,9 @@ func _input(event):
 		
 		this_grid_position = this_grid_position + input_direction
 		
-		this_grid_position = this_grid_position.clamp(Vector2.ZERO,this_grid_size_in_tiles)
+
+		this_grid_position = this_grid_position.clamp(Vector2.ZERO,this_grid_size_in_tiles - Vector2.ONE)
+
 		
 		print_debug(this_grid_position)
 		
@@ -64,4 +68,5 @@ func _on_our_tile_grid_proportions(grid_data):
 	this_grid_size_in_tiles = grid_data.grid_size_in_tiles
 	this_tile_size = grid_data.tile_size
 	this_tile_center_offset = grid_data.tile_center_offset
+
 

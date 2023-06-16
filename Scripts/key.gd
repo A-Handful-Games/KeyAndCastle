@@ -28,4 +28,3 @@ func _on_our_tile_grid_proportions(grid_data):
 	rand_pos_y =  key_rng.randi_range(0,grid_data.grid_size_in_tiles[1]) 
 	scale = grid_data.scale_of_grid
 	position = Vector2(rand_pos_x,rand_pos_y)*grid_data.tile_size + grid_data.tile_center_offset
-	pass # Replace with function body.
