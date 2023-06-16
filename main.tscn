@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b25eomotjru0f"]
+[gd_scene load_steps=14 format=3 uid="uid://b25eomotjru0f"]
 
 [ext_resource type="Texture2D" uid="uid://dm7xn7vq3wj0o" path="res://Assets/Sprites/Tiles/pixilart-drawing.png" id="1_7oku0"]
 [ext_resource type="Script" path="res://main.gd" id="1_esq5c"]
@@ -48,7 +48,6 @@ script = ExtResource("2_8ceu3")
 
 [node name="Dot_player" type="CharacterBody2D" parent="."]
 script = ExtResource("2_bkvj6")
-move_speed = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dot_player"]
 shape = SubResource("RectangleShape2D_q8d45")
