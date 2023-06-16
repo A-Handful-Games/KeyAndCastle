@@ -16,7 +16,6 @@ var id : RID
 func _ready():
 	this_grid_position = Vector2(0,0)
 	id = get_rid()
-	position = this_grid_position * this_tile_size + this_tile_size/2 
 	pass
 
 
@@ -37,7 +36,7 @@ func _input(event):
 				input_direction = Vector2(1,0)
 		
 		
-		this_grid_position = this_grid_position + input_direction
+		this_grid_position = (this_grid_position + input_direction).clamp(Vector2.ZERO,this_grid_size_in_tiles)
 		
 		print_debug(this_grid_position)
 		
