@@ -1,20 +1,13 @@
-extends TextEdit
+extends Node2D
 
-
-var key_count : int
-
+@export var debug : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	key_count = 0
-	text = str(key_count)
+	print_tree_pretty()
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-
-func _on_key_key_got():
-	key_count = key_count + 1
-	text = str(key_count)
