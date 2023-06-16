@@ -73,38 +73,6 @@ func create_grid():
 	proportions.emit(grid_data)
 	
 
-	grid_size_in_units = our_tile_size * our_grid_size
-	tile_center_offset = our_tile_size/2
-	center_of_grid = grid_size_in_units/2
-	
-	#needs to be float and vector2(not 2i) otherwise will round
-	scale = our_tile_size/base_tile_size
-	
-	#This can probaly be done more simple but grid_shape returns index not string
-
-	match grid_shape:
-		0:
-			create_square_grid()
-			selected_grid_shape = "square"
-		1:
-			create_circle_grid()
-			selected_grid_shape = "circle"
-	
-	
-	grid_data = {
-		"selected_grid_shape":selected_grid_shape,
-		"tile_size":our_tile_size,
-		"grid_size_in_tiles":our_grid_size,
-		"grid_size_in_units":grid_size_in_units,
-		"scale_of_grid":scale, #key should be scale_of_grid and not just scale to prevent naming conflicts
-		"tile_center_offset":tile_center_offset,
-		"center_of_grid":center_of_grid
-		}
-		
-	#emit the proportions signal with data about the grids proportions
-	proportions.emit(grid_data)
-	
-
 func create_square_grid():
 	#places cells by column
 	for x in range(our_grid_size[0]):
