@@ -45,7 +45,8 @@ func _input(event):
 		player_data = {
 			"player_position_in_units":position,
 			"player_position_in_tiles":this_grid_position,
-			"player_id":id
+			"player_id":id,
+			"player_node":self
 		}
 		player_moved.emit(player_data)
 

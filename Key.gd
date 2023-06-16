@@ -36,8 +36,8 @@ func _on_our_tile_grid_proportions(grid_data):
 
 
 func _on_dot_player_player_moved(player_data):
-	if player_data.player_position_in_units == position:
-		#TODO: the key still exists and can still be collected - BAD
+	if overlaps_body(player_data.player_node):
+		$CollisionShape2D.disabled = true
 		hide()
 		key_got.emit()
 	pass # Replace with function body.
