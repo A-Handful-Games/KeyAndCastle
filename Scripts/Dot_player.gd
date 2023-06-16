@@ -16,7 +16,7 @@ var id : RID
 func _ready():
 	this_grid_position = Vector2(0,0)
 	id = get_rid()
-
+	position = this_grid_position * this_tile_size + this_tile_size/2 
 	pass
 
 
@@ -39,10 +39,6 @@ func _input(event):
 		
 		this_grid_position = this_grid_position + input_direction
 		
-
-		this_grid_position = this_grid_position.clamp(Vector2.ZERO,this_grid_size_in_tiles - Vector2.ONE)
-
-		
 		print_debug(this_grid_position)
 		
 		position = this_grid_position * this_tile_size + this_tile_size/2 
@@ -53,8 +49,6 @@ func _input(event):
 			"player_id":id
 		}
 		player_moved.emit(player_data)
-
-
 
 func _on_our_tile_grid_proportions(grid_data):
 	

@@ -13,14 +13,6 @@ signal proportions(grid_data)
 #grid_shape will return selected index
 @export_enum("square","cricle") var grid_shape : int
 
-#the shape of the grid
-#grid_shape will return selected index
-@export_enum("square","cricle") var grid_shape
-
-#the shape of the grid
-#grid_shape will return selected index
-@export_enum("square","cricle") var grid_shape
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	create_grid()
@@ -71,7 +63,6 @@ func create_grid():
 		"selected_grid_shape":selected_grid_shape,
 		"tile_size":our_tile_size,
 		"grid_size_in_tiles":our_grid_size - Vector2.ONE,#subtect 1 because index starts at 0
-		"grid_size_in_tiles":our_grid_size - Vector2.ONE,#subtect 1 because index starts at 0
 		"grid_size_in_units":grid_size_in_units,
 		"scale_of_grid":scale, #key should be scale_of_grid and not just scale to prevent naming conflicts
 		"tile_center_offset":tile_center_offset,
@@ -80,13 +71,6 @@ func create_grid():
 		
 	#emit the proportions signal with data about the grids proportions
 	proportions.emit(grid_data)
-
-	
-	#default grid settings
-	var base_tile_size = Vector2i(16,16)
-	var base_grid_size = Vector2i(12,12)
-	
-	
 	
 
 	grid_size_in_units = our_tile_size * our_grid_size
@@ -95,13 +79,8 @@ func create_grid():
 	
 	#needs to be float and vector2(not 2i) otherwise will round
 	scale = our_tile_size/base_tile_size
-
-	
-	
 	
 	#This can probaly be done more simple but grid_shape returns index not string
-
-	var selected_grid_shape : String
 
 	match grid_shape:
 		0:
@@ -111,9 +90,6 @@ func create_grid():
 			create_circle_grid()
 			selected_grid_shape = "circle"
 	
-	#emit the proportions signal with the scale of the grid
-	proportions.emit(selected_grid_shape,our_tile_size,our_grid_size,grid_size_in_units,scale,tile_center_offset,center_of_grid)
-
 	
 	grid_data = {
 		"selected_grid_shape":selected_grid_shape,
