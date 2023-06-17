@@ -1,4 +1,4 @@
-extends PlayerEntity
+extends CharacterBody2D
 
 signal player_moved(player_data)
 

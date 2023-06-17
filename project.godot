@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Key And Castle"
-run/main_scene="res://main.tscn"
+run/main_scene="res://ECS_main.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -23,6 +23,10 @@ DiscreteMonitor="*res://addons/ECS/DiscreteModeMonitor/DiscreteMonitor.tscn"
 [dotnet]
 
 project/assembly_name="Key And Castle"
+
+[editor_plugins]
+
+enabled=PackedStringArray()
 
 [input]
 
