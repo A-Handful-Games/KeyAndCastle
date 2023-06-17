@@ -4,7 +4,6 @@ var key_count : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
 	key_count = 0
 	text = str(key_count)
 	pass # Replace with function body.
