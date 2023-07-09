@@ -81,4 +81,3 @@ script = ExtResource("8_si05o")
 [connection signal="proportions" from="Our_tile_grid" to="Camera2D" method="_on_our_tile_grid_proportions"]
 [connection signal="proportions" from="Our_tile_grid" to="Key" method="_on_our_tile_grid_proportions"]
 [connection signal="player_moved" from="Dot_player" to="Key" method="_on_dot_player_player_moved"]
-[connection signal="key_got" from="Key" to="Tracker" method="_on_key_key_got"]

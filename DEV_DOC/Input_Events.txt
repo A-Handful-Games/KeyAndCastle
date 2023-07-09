@@ -1,0 +1,78 @@
+### Input Events
+### https://docs.godotengine.org/en/stable/tutorials/inputs/inputevent.html#how-does-it-work
+###
+### Events – if not consumed – are passed the commented order below.
+### Child nodes on a tree are sent in reverse depth-first order. 
+### (ie: bottom up, inside out)
+###
+### Only overloaded methods are enabled, so use on as as-need basis.
+### Methods also be toggled with "set_process%METHOD_NAME%(enable: bool)"
+###
+
+# 1. Viewport embedded-window-mangement. (Selecting, resizing, etc)
+#
+# 2. If an embedded window is focused,
+#	 from step 1 using that window's viewport.
+#	 Does not apply to subviewports.
+
+
+# 3. Called for every InputEvent.
+#
+#	 Ideal for event filtering.
+#
+#func _input(event):
+# 	pass
+
+
+# 4. GUI Input (Control._gui_input(event))
+#
+# 	 Seperates layers of control. ie, pressing "space" while typing
+#	 shouldn't make your character jump.
+#
+
+
+# 5. Shortcut input. 
+#
+#	 Used for things like "ctrl-s" instead clicking "save" in the menu.
+#
+# 	 Only called for InputEventKey, InputEventShortcut
+#	 and InputEventJoypadButton.
+#
+#func _shortcut_input(event):
+#	pass
+
+
+# 6. All other input. 
+#
+# Ideal for gameplay events.
+# Not received when GUI is active
+#
+#func _unhandled_input(event):
+#	pass
+
+
+# 7. Keyboard input.
+#
+# Ideal for raw keyboard key events (after being processed by _shortcut_input)
+# Only received if event is InputEventKey
+#
+# Key events could be handled in step 6, but this:
+# - Performs better due to filtering of unrelated inputs.
+# - Can handle modifier keys separately.
+# 	- This allows for unicode character "alt-code" inputs.
+# 
+#func _unhandled_key_input(event):
+#	pass
+
+
+# 8. Object Picking (Viewport.physics_object_picking)
+#
+# Uses a ray cast from the mouse position to select an object.
+# _input_event(event) is called on the first CollsionObject hit.
+#
+# Only received if object picking is enabled.
+# For root viewport, this is enabled in project settings.
+#
+# Selectable objects (CollsionObject2D/3D) must have:
+# - input_ray_pickable=true
+# - At least one collision_layer bit to be set.

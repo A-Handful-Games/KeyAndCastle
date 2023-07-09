@@ -6,3 +6,7 @@
 **/.ignore/**
 # Don't ignore the .ignore folders themselves
 !**/.ignore
+
+**/Dev/**
+
+**/ECSexample

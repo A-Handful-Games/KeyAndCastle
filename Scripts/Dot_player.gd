@@ -1,9 +1,6 @@
-extends CharacterBody2D
-
+extends AnimatableBody2D
 
 signal player_moved(player_data)
-
-
 @export var move_speed  = Vector2(16,16)
 
 

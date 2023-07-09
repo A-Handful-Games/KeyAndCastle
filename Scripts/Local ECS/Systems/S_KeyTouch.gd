@@ -1,8 +1,5 @@
-# meta-name: System
-# meta-description: A default system for processing components and entities
-
 extends System
-class_name YOUR_SYSTEM_NAME
+class_name S_KeyTouch
 
 const NECCESSARY_COMPONENTS: Array[String] = [
 	# YOUR_COMPOENENT.COMPONENT_TYPE,
@@ -37,3 +34,5 @@ func get_entity_components(entity: Entity, components: Array[String]) -> Diction
 		c_dict[c_string] = entity.get_component(c_string)
 	
 	return c_dict
+
+

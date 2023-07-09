@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://cygo3h0hl26n2"]
+
+[ext_resource type="Script" path="res://Scripts/Local ECS/Systems/S_GridMovement.gd" id="1_h42kp"]
+[ext_resource type="Script" path="res://Scripts/Local ECS/EntityComponents/EC_Grid.gd" id="1_xa0ee"]
+[ext_resource type="TileSet" uid="uid://cxcb5ii7i0bqo" path="res://Assets/Tilemaps/Tilemap_Placeholder.tres" id="3_t0cb4"]
+[ext_resource type="PackedScene" uid="uid://chkditduw6xen" path="res://Scenes/ECS/Entities/player_entity.tscn" id="5_403aa"]
+[ext_resource type="Script" path="res://Key.gd" id="6_dlqlx"]
+[ext_resource type="Texture2D" uid="uid://b4s3kexrjkhu" path="res://Assets/Sprites/Objects/Key-Free-PNG-Image.png" id="7_teiwo"]
+[ext_resource type="Script" path="res://Scripts/Local ECS/Systems/S_GridPositionSynchro.gd" id="8_o3cqd"]
+[ext_resource type="Script" path="res://Tracker.gd" id="8_pwo4i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2prtv"]
+radius = 3.0
+height = 12.0
+
+[node name="Grid" type="TileMap"]
+tile_set = ExtResource("3_t0cb4")
+format = 2
+script = ExtResource("1_xa0ee")
+tile_size = Vector2i(16, 16)
+
+[node name="GridMovementSystem" type="Node" parent="."]
+script = ExtResource("1_h42kp")
+
+[node name="GridPositionSynchroSystem" type="Node" parent="."]
+script = ExtResource("8_o3cqd")
+
+[node name="Player" parent="." instance=ExtResource("5_403aa")]
+init_grid_pos = Vector2i(0, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="Key" type="Area2D" parent="."]
+position = Vector2(32, 32)
+script = ExtResource("6_dlqlx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key"]
+shape = SubResource("CapsuleShape2D_2prtv")
+
+[node name="Sprite2D" type="Sprite2D" parent="Key"]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("7_teiwo")
+
+[node name="Tracker" type="TextEdit" parent="."]
+visible = false
+offset_left = 48.0
+offset_top = 48.0
+offset_right = 128.0
+offset_bottom = 112.0
+editable = false
+context_menu_enabled = false
+shortcut_keys_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+virtual_keyboard_enabled = false
+middle_mouse_paste_enabled = false
+script = ExtResource("8_pwo4i")
