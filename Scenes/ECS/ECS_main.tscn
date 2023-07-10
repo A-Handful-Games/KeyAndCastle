@@ -17,7 +17,6 @@ height = 12.0
 tile_set = ExtResource("3_t0cb4")
 format = 2
 script = ExtResource("1_xa0ee")
-tile_size = Vector2i(16, 16)
 
 [node name="GridMovementSystem" type="Node" parent="."]
 script = ExtResource("1_h42kp")
@@ -26,7 +25,6 @@ script = ExtResource("1_h42kp")
 script = ExtResource("8_o3cqd")
 
 [node name="Player" parent="." instance=ExtResource("5_403aa")]
-init_grid_pos = Vector2i(0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)

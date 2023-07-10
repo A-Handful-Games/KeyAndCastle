@@ -6,7 +6,6 @@ const COMPONENT_TYPE = "EC_Grid"
 
 @export var init_pos := Vector2.ZERO
 @export var grid_size := Vector2i(16,16)
-@export var tile_size := Vector2i(12,12)
 
 var _entity: Entity
 var c_raw_postion: C_RawPosition
@@ -19,8 +18,9 @@ func _init():
 	
 	c_raw_postion = C_RawPosition.new(init_pos)
 	c_grid_size = C_GridSize.new(grid_size)
-	c_tile_size = C_TileSize.new(tile_size)
+	c_tile_size = C_TileSize.new(self.tile_set.tile_size)
 	
+	pass # Breakpoint
 	var e: Entity = Entity.new([
 			c_raw_postion,
 			c_grid_size,
@@ -37,10 +37,6 @@ func _init():
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Workaround: tile-size doesnt update with editor
-	_entity.get_component(C_TileSize.COMPONENT_TYPE).size = tile_size
-	print_debug(self.c_tile_size.size)
-	print_debug(self)
 	create_grid()
 
 	
