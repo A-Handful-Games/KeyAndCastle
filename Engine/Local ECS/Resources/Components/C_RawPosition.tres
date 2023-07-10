@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="C_RawPosition" load_steps=2 format=3 uid="uid://cn2r5axghtw7r"]
+
+[ext_resource type="Script" path="res://Engine/Local ECS/Scripts/Components/C_RawPosition.gd" id="1_idn5s"]
+
+[resource]
+script = ExtResource("1_idn5s")
+_position_data = Vector2(0, 0)

@@ -7,6 +7,7 @@ const COMPONENT_TYPE = "C_RawPosition"
 
 
 func _init(starting_position: Vector2 = Vector2.ZERO):
+	resource_name = "Component: Raw Position"
 	_position_data = starting_position
 
 

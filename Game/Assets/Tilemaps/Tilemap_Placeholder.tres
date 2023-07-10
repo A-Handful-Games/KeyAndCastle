@@ -1,6 +1,7 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cxcb5ii7i0bqo"]
+[gd_resource type="TileSet" script_class="C_TileSize" load_steps=4 format=3 uid="uid://cxcb5ii7i0bqo"]
 
 [ext_resource type="Texture2D" uid="uid://dm7xn7vq3wj0o" path="res://Game/Assets/Sprites/Tiles/pixilart-drawing.png" id="1_482rq"]
+[ext_resource type="Script" path="res://Engine/Local ECS/Scripts/Components/C_Tileset.gd" id="1_pnjpl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50tg4"]
 texture = ExtResource("1_482rq")
@@ -21,3 +22,4 @@ terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "testing terrian"
 terrain_set_0/terrain_0/color = Color(0.631373, 0.188235, 0.407843, 1)
 sources/0 = SubResource("TileSetAtlasSource_50tg4")
+script = ExtResource("1_pnjpl")

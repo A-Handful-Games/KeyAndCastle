@@ -1,22 +1,44 @@
-[gd_scene load_steps=10 format=3 uid="uid://cygo3h0hl26n2"]
+[gd_scene load_steps=19 format=3 uid="uid://cygo3h0hl26n2"]
 
 [ext_resource type="TileSet" uid="uid://cxcb5ii7i0bqo" path="res://Game/Assets/Tilemaps/Tilemap_Placeholder.tres" id="1_xxymj"]
 [ext_resource type="Script" path="res://Engine/Local ECS/Scripts/EntityComponents/EC_Grid.gd" id="2_pp3vy"]
 [ext_resource type="Script" path="res://Engine/Local ECS/Scripts/Systems/S_GridMovement.gd" id="3_3nwko"]
 [ext_resource type="Script" path="res://Engine/Local ECS/Scripts/Systems/S_GridPositionSynchro.gd" id="4_f44v2"]
+[ext_resource type="Script" path="res://Engine/Local ECS/Scripts/Components/C_GridSize.gd" id="4_o1k5n"]
 [ext_resource type="PackedScene" uid="uid://chkditduw6xen" path="res://Engine/Local ECS/Scenes/Entities/player_entity.tscn" id="5_21rxd"]
+[ext_resource type="Script" path="res://Engine/Local ECS/Scripts/Components/C_RawPosition.gd" id="6_31elp"]
+[ext_resource type="Script" path="res://Engine/Local ECS/Scripts/Components/C_GridPosition.gd" id="6_hcddr"]
 [ext_resource type="Script" path="res://Key.gd" id="6_inugg"]
 [ext_resource type="Texture2D" uid="uid://b4s3kexrjkhu" path="res://Game/Assets/Sprites/Objects/Key-Free-PNG-Image.png" id="7_eesmm"]
 [ext_resource type="Script" path="res://Tracker.gd" id="8_mqsnv"]
+[ext_resource type="Script" path="res://Engine/Local ECS/Scripts/Components/C_UpdateState.gd" id="8_p7ysg"]
+
+[sub_resource type="Resource" id="Resource_88l18"]
+script = ExtResource("6_31elp")
+_position_data = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_kh07y"]
+script = ExtResource("4_o1k5n")
+size = Vector2i(16, 16)
+
+[sub_resource type="Resource" id="Resource_k13h1"]
+script = ExtResource("6_31elp")
+_position_data = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_aamib"]
+script = ExtResource("6_hcddr")
+_position_data = Vector2i(0, 0)
+
+[sub_resource type="Resource" id="Resource_h4bp0"]
+script = ExtResource("8_p7ysg")
+name = ""
+state = false
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2prtv"]
 radius = 3.0
 height = 12.0
 
-[node name="Grid" type="TileMap"]
-tile_set = ExtResource("1_xxymj")
-format = 2
-script = ExtResource("2_pp3vy")
+[node name="Node" type="Node"]
 
 [node name="GridMovementSystem" type="Node" parent="."]
 script = ExtResource("3_3nwko")
@@ -24,7 +46,18 @@ script = ExtResource("3_3nwko")
 [node name="GridPositionSynchroSystem" type="Node" parent="."]
 script = ExtResource("4_f44v2")
 
-[node name="Player" parent="." instance=ExtResource("5_21rxd")]
+[node name="Grid" type="TileMap" parent="."]
+tile_set = ExtResource("1_xxymj")
+format = 2
+script = ExtResource("2_pp3vy")
+c_raw_postion = SubResource("Resource_88l18")
+c_grid_size = SubResource("Resource_kh07y")
+
+[node name="Player" parent="." node_paths=PackedStringArray("attached_grid") instance=ExtResource("5_21rxd")]
+c_raw_postion = SubResource("Resource_k13h1")
+c_grid_position = SubResource("Resource_aamib")
+c_move_update_state = SubResource("Resource_h4bp0")
+attached_grid = NodePath("../Grid")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)

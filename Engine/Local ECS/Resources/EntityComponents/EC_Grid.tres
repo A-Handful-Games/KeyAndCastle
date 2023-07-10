@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="EC_Grid" load_steps=2 format=3 uid="uid://bos1tci07qbx3"]
+
+[ext_resource type="Script" path="res://Engine/Local ECS/Scripts/EntityComponents/EC_Grid.gd" id="1_skuy0"]
+
+[resource]
+script = ExtResource("1_skuy0")

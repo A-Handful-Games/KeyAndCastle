@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="C_TileSize" load_steps=2 format=3 uid="uid://efpilpimy1bf"]
+
+[ext_resource type="Script" path="res://Engine/Local ECS/Scripts/Components/C_Tileset.gd" id="1_2cd62"]
+
+[resource]
+script = ExtResource("1_2cd62")
+size = Vector2(16, 16)

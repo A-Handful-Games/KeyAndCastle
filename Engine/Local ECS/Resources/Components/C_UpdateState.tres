@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="C_UpdateState" load_steps=2 format=3 uid="uid://cj0vhquxkm0yo"]
+
+[ext_resource type="Script" path="res://Engine/Local ECS/Scripts/Components/C_UpdateState.gd" id="1_ed1d6"]
+
+[resource]
+script = ExtResource("1_ed1d6")
+name = "PLAYER_MOVE"
+state = false

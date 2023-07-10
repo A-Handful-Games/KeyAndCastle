@@ -1,13 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://chkditduw6xen"]
+[gd_scene load_steps=10 format=3 uid="uid://chkditduw6xen"]
 
 [ext_resource type="Script" path="res://Engine/Local ECS/Scripts/Entities/E_Player.gd" id="1_6u1d0"]
 [ext_resource type="Texture2D" uid="uid://ehbsclwr3vt2" path="res://Game/Assets/Sprites/Player/green-among-us-png-character-0.png" id="2_1r6qo"]
+[ext_resource type="Script" path="res://Engine/Local ECS/Scripts/Components/C_RawPosition.gd" id="2_fr7im"]
+[ext_resource type="Script" path="res://Engine/Local ECS/Scripts/Components/C_GridPosition.gd" id="3_xcsh0"]
+[ext_resource type="Script" path="res://Engine/Local ECS/Scripts/Components/C_UpdateState.gd" id="4_t18wf"]
+
+[sub_resource type="Resource" id="Resource_8pnnd"]
+script = ExtResource("2_fr7im")
+_position_data = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_dj47m"]
+script = ExtResource("3_xcsh0")
+_position_data = Vector2i(0, 0)
+
+[sub_resource type="Resource" id="Resource_wexdj"]
+script = ExtResource("4_t18wf")
+name = "PLAYER_MOVE"
+state = false
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q8d45"]
 size = Vector2(10, 10)
 
 [node name="Player" type="AnimatableBody2D"]
 script = ExtResource("1_6u1d0")
+c_raw_postion = SubResource("Resource_8pnnd")
+c_grid_position = SubResource("Resource_dj47m")
+c_move_update_state = SubResource("Resource_wexdj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_q8d45")

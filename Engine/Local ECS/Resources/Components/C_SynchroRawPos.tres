@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="C_SynchroRawPos" load_steps=2 format=3 uid="uid://5c0vusd0wp5u"]
+
+[ext_resource type="Script" path="res://Engine/Local ECS/Scripts/Components/C_SynchroRawPos.gd" id="1_qcwm8"]
+
+[resource]
+script = ExtResource("1_qcwm8")
