@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ehbsclwr3vt2"
-path="res://.godot/imported/green-among-us-png-character-0.png-691a37fc857943f3057eb83e373ae148.ctex"
+uid="uid://b4s3kexrjkhu"
+path="res://.godot/imported/Key-Free-PNG-Image.png-e72113834be07c3ea5897546d159eefc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Player/green-among-us-png-character-0.png"
-dest_files=["res://.godot/imported/green-among-us-png-character-0.png-691a37fc857943f3057eb83e373ae148.ctex"]
+source_file="res://Game/Assets/Sprites/Objects/Key-Free-PNG-Image.png"
+dest_files=["res://.godot/imported/Key-Free-PNG-Image.png-e72113834be07c3ea5897546d159eefc.ctex"]
 
 [params]
 

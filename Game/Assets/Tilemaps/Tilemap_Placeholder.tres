@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cxcb5ii7i0bqo"]
 
-[ext_resource type="Texture2D" uid="uid://dm7xn7vq3wj0o" path="res://Assets/Sprites/Tiles/pixilart-drawing.png" id="1_r7umu"]
+[ext_resource type="Texture2D" uid="uid://dm7xn7vq3wj0o" path="res://Game/Assets/Sprites/Tiles/pixilart-drawing.png" id="1_482rq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50tg4"]
-texture = ExtResource("1_r7umu")
+texture = ExtResource("1_482rq")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0

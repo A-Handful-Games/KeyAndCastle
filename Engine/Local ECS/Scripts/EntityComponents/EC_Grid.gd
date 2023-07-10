@@ -5,7 +5,7 @@ class_name EC_Grid
 const COMPONENT_TYPE = "EC_Grid"
 
 @export var init_pos := Vector2.ZERO
-@export var grid_size := Vector2i(16,16)
+var grid_size := Vector2i(16,16)
 
 var _entity: Entity
 var c_raw_postion: C_RawPosition
@@ -48,8 +48,6 @@ func _process(delta):
 
 
 func calc_grid_to_raw(c_grid_postition: C_GridPosition) -> Vector2:
-	
-	print_debug([self.c_tile_size.size, self.c_tile_size.offset])
 	var calc_pos: Vector2 = (
 		self.c_raw_postion.pos +
 		(Vector2(c_grid_postition.pos) * self.c_tile_size.size) +

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://braib32n4wtwd"]
 
-[ext_resource type="Script" path="res://Scripts/Local ECS/Systems/S_GridMovement.gd" id="1_ubxrr"]
+[ext_resource type="Script" path="res://Engine/Local ECS/Scripts/Systems/S_GridMovement.gd" id="1_ubxrr"]
 
 [node name="GridPositionComponent" type="Node"]
 script = ExtResource("1_ubxrr")

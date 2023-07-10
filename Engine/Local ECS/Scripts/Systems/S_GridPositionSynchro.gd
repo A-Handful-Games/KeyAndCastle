@@ -43,7 +43,7 @@ func on_entity_process(entity: Entity, delta):
 	var c_grid_position: C_GridPosition = c_dict[C_GridPosition.COMPONENT_TYPE]
 	
 	var grid_tilemap: EC_Grid = c_dict[EC_Grid.COMPONENT_TYPE]
-	print_debug(grid_tilemap)
+
 	var future_pos = grid_tilemap.calc_grid_to_raw(c_grid_position)
 	if future_pos == (c_grid_position.pos as Vector2):
 		return
@@ -51,7 +51,7 @@ func on_entity_process(entity: Entity, delta):
 	c_raw_position.pos = future_pos
 	
 	c_synchro_player.position = c_raw_position.pos
-	print_debug(c_synchro_player.position)
+
 
 
 # returns an array of necessary components
