@@ -15,7 +15,6 @@ const MOVE_UPDATE_STRING = "PLAYER_MOVE"
 
 ### Systems Logic
 ### https://github.com/Germenzi/gdECSv4/blob/main/README.md
-###
 
 # here system logic
 func on_entity_process(entity: Entity, delta):
@@ -32,7 +31,6 @@ func on_entity_process(entity: Entity, delta):
 			return
 	
 	
-	
 	var c_dict: Dictionary = get_entity_components(
 		entity, NECCESSARY_COMPONENTS
 	)
@@ -43,13 +41,8 @@ func on_entity_process(entity: Entity, delta):
 	var c_grid_position: C_GridPosition = c_dict[C_GridPosition.COMPONENT_TYPE]
 	
 	var grid_tilemap: EC_Grid = c_dict[EC_Grid.COMPONENT_TYPE]
-
-	var future_pos = grid_tilemap.calc_grid_to_raw(c_grid_position)
-	if future_pos == (c_grid_position.pos as Vector2):
-		return
 	
-	c_raw_position.pos = future_pos
-	
+	c_raw_position.pos = grid_tilemap.map_to_local(c_grid_position.pos)
 	c_synchro_player.position = c_raw_position.pos
 
 

@@ -13,13 +13,14 @@
 [ext_resource type="Script" path="res://Tracker.gd" id="8_mqsnv"]
 [ext_resource type="Script" path="res://Engine/Local ECS/Scripts/Components/C_UpdateState.gd" id="8_p7ysg"]
 
-[sub_resource type="Resource" id="Resource_88l18"]
-script = ExtResource("6_31elp")
-_position_data = Vector2(0, 0)
-
 [sub_resource type="Resource" id="Resource_kh07y"]
 script = ExtResource("4_o1k5n")
 size = Vector2i(16, 16)
+
+[sub_resource type="Resource" id="Resource_vcreb"]
+script = ExtResource("8_p7ysg")
+name = ""
+state = false
 
 [sub_resource type="Resource" id="Resource_k13h1"]
 script = ExtResource("6_31elp")
@@ -50,8 +51,8 @@ script = ExtResource("4_f44v2")
 tile_set = ExtResource("1_xxymj")
 format = 2
 script = ExtResource("2_pp3vy")
-c_raw_postion = SubResource("Resource_88l18")
 c_grid_size = SubResource("Resource_kh07y")
+c_update_state = SubResource("Resource_vcreb")
 
 [node name="Player" parent="." node_paths=PackedStringArray("attached_grid") instance=ExtResource("5_21rxd")]
 c_raw_postion = SubResource("Resource_k13h1")
